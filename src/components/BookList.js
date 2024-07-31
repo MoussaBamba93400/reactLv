@@ -1,18 +1,24 @@
-// src/BookList.js
-import React from 'react';
-import books from '../books.json';
-import BookCard from './BookCard';
-import '../css/BookList.css';
+import React from "react";
+import BookCard from "./BookCard";
+import "../css/BookList.css";
 
-function BookList() {
+function BookList({ books, searchQuery, addToCart }) {
+  const filteredBooks = books.filter((book) =>
+    book.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+
+
   return (
     <div className="book-list">
-      {books.map(book => (
-        <BookCard 
-          key={book.isbn} 
-          name={book.name} 
-          authors={book.authors} 
-          released={book.released} 
+      {filteredBooks.map((book, key) => (
+        <BookCard
+          key={key}
+          name={book.name}
+          authors={book.authors}
+          released={book.released}
+          apiUrl={book.apiUrl}
+          addToCart={() => addToCart(book)}
         />
       ))}
     </div>

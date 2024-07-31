@@ -1,0 +1,34 @@
+.cart-details {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .cart-details ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .cart-details li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .cart-details div {
+    flex-grow: 1;
+  }
+  
+  .cart-details button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .cart-details button:hover {
+    background-color: #d32f2f;
+  }
+  
