@@ -1,7 +1,11 @@
-import React from 'react';
+// src/components/CartDetails.js
+import React, { useContext } from 'react';
 import '../css/cart.css';
+import { CartContext } from '../contexts/CartContext';
 
-function CartDetails({ cart, removeFromCart }) {
+function CartDetails() {
+  const { cart, removeFromCart } = useContext(CartContext);
+
   return (
     <div className="cart-details">
       <h2>Cart Details</h2>
@@ -9,7 +13,7 @@ function CartDetails({ cart, removeFromCart }) {
         <p>Your cart is empty</p>
       ) : (
         <ul>
-          {cart.map(book => (
+          {cart.map((book) => (
             <li key={book.apiUrl}>
               <div>
                 <h3>{book.name}</h3>

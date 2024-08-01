@@ -1,6 +1,10 @@
-import React from 'react';
+// src/components/Cart.js
+import React, { useContext } from 'react';
+import { CartContext } from '../contexts/CartContext';
 
-function Cart({ cart, removeFromCart }) {
+function Cart() {
+  const { cart, removeFromCart } = useContext(CartContext);
+
   return (
     <div className="cart">
       <h2>Cart</h2>
